@@ -111,7 +111,7 @@ const ProductList = () => {
   const renderProduct = (product, index) => (
     <div
       key={index}
-      className="w-[28vw] hover:scale-105 transition-all cursor-pointer duration-100 shadow-lg bg-white text-black  mx-auto my-auto px-10 py-10 rounded-xl "
+      className="w-[28vw] max-md:w-[80vw] hover:scale-105 transition-all cursor-pointer duration-50 shadow-lg bg-white text-black  mx-auto my-auto px-10 py-10 rounded-xl "
     >
       <img
         className="mx-auto rounded-xl aspect-square"
@@ -121,7 +121,7 @@ const ProductList = () => {
       <h2 className="py-2">{product.title}</h2>
       <p className="py-2 text-xl">Price: ${product.price}</p>
       <p className="py-2 ">{product.description}</p>
-      <p className="py-2">Category: {product.category}</p>
+      {/* <p className="py-2">Category: {product.category}</p> */}
     </div>
   );
 
@@ -141,9 +141,8 @@ const ProductList = () => {
         <option className="px-2 py-2" value="category">
           Category
         </option>
-        {/* Add more sort options here */}
       </select>
-      <div className="grid  grid-cols-3 gap-10 ">
+      <div className="grid  md:grid-cols-3 grid-cols-1 gap-10 ">
         {paginatedProducts.map(renderProduct)}
       </div>
       <button
